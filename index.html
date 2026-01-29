@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozmos | Vertex Universe</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+        .hero-section {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            /* Ensure background doesn't overflow */
+        }
+
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .nebula-layer {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: url('images/nebula_spread.png');
+            background-size: 50% 50%;
+            background-repeat: repeat;
+            opacity: 0.7;
+            mix-blend-mode: screen;
+            /* Blend layers */
+        }
+
+        .layer-1 {
+            animation: moveRandom1 60s linear infinite;
+        }
+
+        .layer-2 {
+            background-size: 60% 60%;
+            opacity: 0.5;
+            animation: moveRandom2 75s linear infinite reverse;
+        }
+
+        .layer-3 {
+            background-size: 40% 40%;
+            opacity: 0.6;
+            animation: moveRandom3 90s linear infinite;
+        }
+
+        .liquid-glass-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Liquid Glass Effect */
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px) saturate(1.2);
+            -webkit-backdrop-filter: blur(8px) saturate(1.2);
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            pointer-events: none;
+            /* Let clicks pass through */
+        }
+
+        @keyframes moveRandom1 {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+
+            33% {
+                transform: translate(-5%, -2%) rotate(2deg) scale(1.02);
+            }
+
+            66% {
+                transform: translate(2%, -4%) rotate(-1deg) scale(1.05);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes moveRandom2 {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1.1);
+            }
+
+            50% {
+                transform: translate(5%, 5%) rotate(-3deg) scale(1);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1.1);
+            }
+        }
+
+        @keyframes moveRandom3 {
+            0% {
+                transform: translate(-2%, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(3%, 3%) rotate(1deg);
+            }
+
+            75% {
+                transform: translate(-3%, -2%) rotate(-2deg);
+            }
+
+            100% {
+                transform: translate(-2%, 0) rotate(0deg);
+            }
+        }
+
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(to bottom,
+                    rgba(5, 5, 5, 0.3),
+                    rgba(88, 28, 135, 0.4),
+                    #050505);
+            z-index: 1;
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+
+            background: linear-gradient(90deg, #fff, #d8b4fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
+        }
+
+        .cta-button:hover {
+            background: rgba(138, 43, 226, 0.6);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+            transform: translateY(-3px);
+        }
+
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="logo">VERTEX | COZMOS</div>
+
+    </nav>
+
+
+    <section class="hero-section">
+
+        <div class="background-container">
+            <div class="nebula-layer layer-1"></div>
+            <div class="nebula-layer layer-2"></div>
+            <div class="nebula-layer layer-3"></div>
+            <div class="liquid-glass-overlay"></div>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <div style="margin-bottom: 20px;">
+                <span
+                    style="background: rgba(139, 92, 246, 0.2); color: #d8b4fe; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(139, 92, 246, 0.4);">
+                    PROJECT COZMOS ALPHA
+                </span>
+            </div>
+
+            <h1>EVRENİNİ YARAT</h1>
+
+            <p class="subtitle">
+                Odan artık sadece dört duvar değil. <br>
+                Yapay zeka karakterleri ve AR teknolojisiyle <br>
+                yaşam alanını dijital bir üsse dönüştür.
+            </p>
+
+            <a href="#" class="cta-button">Devrime Katıl</a>
+        </div>
+    </section>
+
+</body>
+
+</html>
