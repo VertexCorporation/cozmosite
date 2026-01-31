@@ -230,3 +230,122 @@ nav {
     color: white;
     letter-spacing: 2px;
 }
+
+
+/* --- LİNKLER / KARTLAR BÖLÜMÜ --- */
+.links-grid-section {
+    position: relative;
+    z-index: 10;
+    /* Yıldızların üzerinde durması için */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px 100px 20px;
+    /* Alttan biraz boşluk */
+    margin-top: -50px;
+    /* Hero'nun biraz içine girsin istersen, yoksa 0 yap */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Yan yana 2 kutu */
+    gap: 20px;
+    /* Aralarındaki boşluk */
+    max-width: 900px;
+    width: 100%;
+}
+
+/* KART TASARIMI */
+.link-card {
+    background-color: #0a0a0a;
+    /* Çok koyu gri/siyah */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Silik gri çerçeve */
+    border-radius: 16px;
+    /* Köşeleri yuvarla */
+    padding: 30px;
+    text-decoration: none;
+    /* Link çizgisini kaldır */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px;
+    /* Kart yüksekliği */
+    transition: all 0.3s ease;
+}
+
+/* İKON KISMI */
+/* İKON KISMI */
+.card-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(119, 1, 145, 0.996);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.card-icon img,
+.card-icon svg {
+    width: 24px;
+    height: 24px;
+    opacity: 0.9;
+    object-fit: contain;
+
+}
+
+/* YAZI KISMI */
+.card-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: none;
+    /* Hero'daki gradient burayı bozmasın */
+    -webkit-text-fill-color: white;
+    /* Yazı beyaz olsun */
+    animation: none;
+    /* Hero animasyonu burayı etkilemesin */
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #888;
+    /* Gri açıklama yazısı */
+    font-weight: 400;
+}
+
+/* HOVER (ÜZERİNE GELİNCE) EFEKTİ */
+.link-card:hover {
+    border-color: #8A2BE2;
+    /* COZMOS MORU */
+    background-color: rgba(138, 43, 226, 0.05);
+    /* Çok hafif mor zemin */
+    transform: translateY(-5px);
+    /* Hafif yukarı kalksın */
+}
+
+/* ACTIVE STATE (Örnek: Google Play butonu seçili gibi dursun istersen) */
+
+
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Telefondan girince alt alta tek sıra olsun */
+    }
+}
+
+
+.footer {
+
+
+    opacity: 0.5;
+
+    text-align: center;
+
+    color: #8A2BE2;
+}
