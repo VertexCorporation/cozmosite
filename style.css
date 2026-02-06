@@ -337,17 +337,12 @@ nav {
         grid-template-columns: 1fr;
         /* Telefondan girince alt alta tek sıra olsun */
     }
-
-    nav {
-        justify-content: center;
-        padding: 20px;
-    }
 }
 
 
 .footer {
 
-    padding-bottom: 30px;
+
     opacity: 0.5;
 
     text-align: center;
