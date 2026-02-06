@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -55,7 +56,7 @@ body {
     height: 200%;
     background:
         radial-gradient(circle at 50% 50%, rgba(150, 110, 243, 0.4) 0%, transparent 60%),
-        radial-gradient(circle at 20% 80%, rgba(139, 17, 196, 0.652) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgb(148, 21, 206) 0%, transparent 50%);
     background-size: 150% 150%;
     filter: blur(80px);
     /* Daha soft geçiş */
@@ -203,12 +204,12 @@ p.subtitle {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 0 15px rgba(137, 43, 226, 0.578);
 }
 
 .cta-button:hover {
     background: rgba(138, 43, 226, 0.6);
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+    box-shadow: 0 0 30px rgba(137, 43, 226, 0.955);
     transform: translateY(-3px);
 }
 
@@ -240,7 +241,7 @@ nav {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 20px 100px 20px;
+    padding: 0 20px 40px 20px;
     /* Alttan biraz boşluk */
     margin-top: -50px;
     /* Hero'nun biraz içine girsin istersen, yoksa 0 yap */
@@ -281,7 +282,7 @@ nav {
 .card-icon {
     width: 48px;
     height: 48px;
-    background: rgba(119, 1, 145, 0.996);
+    background: rgba(168, 3, 205, 0.996);
     border-radius: 12px;
     display: flex;
     align-items: center;
