@@ -282,7 +282,8 @@ nav {
 .card-icon {
     width: 48px;
     height: 48px;
-    background: rgba(168, 3, 205, 0.996);
+    /* Background removed */
+    background: transparent;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -292,11 +293,14 @@ nav {
 
 .card-icon img,
 .card-icon svg {
-    width: 24px;
-    height: 24px;
-    opacity: 0.9;
+    width: 48px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
     object-fit: contain;
 
+    /* Purple filter for #8A2BE2 from dark color */
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(253deg) brightness(97%) contrast(90%);
 }
 
 /* YAZI KISMI */
